@@ -1,4 +1,4 @@
-function HelloWorld.main 0
+function Main.main 0
 push constant 12
 call String.new 1
 push constant 72
@@ -26,6 +26,8 @@ call String.appendChar 2
 push constant 33
 call String.appendChar 2
 call Output.printString 1
+pop temp 0
+call Output.println 0
 pop temp 0
 push constant 20
 call String.new 1
