@@ -15,4 +15,36 @@ CHIP Mux {
 
     PARTS:
     // Put your code here:
+    // (a x b' x sel)
+    //Not(in=b, out=notB);
+    //And(a=a, b=notB, out=aAndNotB);
+    //And(a=aAndNotB, b=notSel, out=part1);
+
+    // (a x b x notSel)
+    //Not(in=sel, out=notSel);
+    //And(a=a, b=b, out=aAndB);
+    //And(a=aAndB, b=notSel, out=part2);
+
+    // (a' x b x sel)
+    //Not(in=a, out=notA);
+    //And(a=notA, b=b, out=notAandB);
+    //And(a=notAandB, b=sel, out=part3);
+
+    // (a x b x sel)
+    //And(a=aAndB, b=sel, out=part4);
+
+    // combine part 1 and part 2
+    //Or(a=part1, b=part2, out=topHalf);
+
+    // combine part 3 and part 4
+    //Or(a=part3, b=part4, out=botHalf);
+
+    // combine topHalf and botHalf
+    //Or(a=topHalf, b=botHalf, out=out);
+
+    Not(in=sel, out=notSel);
+    And(a=a, b=notSel, out=aAndnotSel);
+    And(a=sel, b=b, out=selAndB);
+    Or(a=aAndnotSel, b=selAndB, out=out);
+
 }

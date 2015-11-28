@@ -15,4 +15,7 @@ CHIP And {
 
     PARTS:
     // Put your code here:
+    // nOut = is a made up pin to connect both Nand and Not together
+    Nand(a=a, b=b, out=nOut);
+    Not(in=nOut, out=out);
 }
