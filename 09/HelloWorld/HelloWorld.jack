@@ -1,0 +1,11 @@
+// Hello World program for project 9
+
+class HelloWorld {
+	function void main() {
+		// Print some text using the standard library.
+		do Output.printString("Hello World!");
+		do Output.printString("I am alive, muhahaha");
+		do Output.println();
+		return;
+	}
+}
