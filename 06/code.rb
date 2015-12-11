@@ -11,7 +11,7 @@ class Code
   	'AMD' => '111'
   }
 
-  DEST1 = {
+  JUMP = {
     nil => '',
     'JGT' => '001',
     'JEQ' => '010',
@@ -22,7 +22,7 @@ class Code
     'JMP' => '111'
   }
 
-  DEST2 = {
+  COMP = {
     '0' => '0101010',
     '1' => '0111111',
     '-1' => '0111010',
@@ -58,11 +58,11 @@ class Code
   end
 
   def comp(mnemonic)
-    DEST2[mnemonic]
+    COMP[mnemonic]
   end
 
   def jump(mnemonic)
-    DEST1[mnemonic]
+    JUMP[mnemonic]
   end
 
 end
